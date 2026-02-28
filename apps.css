@@ -1,0 +1,18 @@
+:root{--accent:#2b6cb0;--muted:#666}
+*{box-sizing:border-box}
+body{font-family:Inter, system-ui, Arial; margin:0; background:#f7f9fc; color:#222}
+.app-root{display:flex; min-height:100vh; flex-direction:column}
+.container{flex:1; max-width:1000px; margin:24px auto; padding:12px}
+header.site-header{background:#fff; border-bottom:1px solid #e6eef8}
+.header-inner{max-width:1000px; margin:0 auto; padding:12px; display:flex; align-items:center; justify-content:space-between}
+.brand{font-weight:700; color:var(--accent)}
+.nav-links a{margin-left:12px; text-decoration:none; color:var(--muted)}
+.card{background:#fff; padding:16px; border-radius:8px; box-shadow:0 2px 6px rgba(20,30,60,0.04); margin-bottom:12px}
+.form-row{margin-bottom:10px}
+.input, textarea, select{width:100%; padding:8px; border:1px solid #dfe7f4; border-radius:6px}
+.button{background:var(--accent); color:#fff; padding:8px 12px; border:none; border-radius:6px; cursor:pointer}
+.grid{display:grid; grid-template-columns:repeat(3,1fr); gap:12px}
+@media(max-width:800px){.grid{grid-template-columns:1fr}}
+.student-card{border-left:4px solid var(--accent); padding:12px}
+.footer{padding:12px; text-align:center; color:#888}
+.small{font-size:0.9rem}
