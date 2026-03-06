@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" a href="form.css">
+</head>
+<body style="background-color: azure;">
+   
+    <div><form name="myform" method="post" onsubmit= "return validation()" style="background-color: aquamarine; text-align: center;
+    font-size: 40px; padding:10px;">
+                                  <strong>  Form Validation </strong>
+    </div>
+   
+    <div style="text-align: center;padding: 15px;" >
+   
+        <div class="heading">User Name: </div>
+        <div class="input">
+        <input type="text"  name="name" id="nm" placeholder="Enter your name" class="tag"/></div><br/><br/>
+       
+        <div class="heading">Password: </div>
+        <div class="input">
+        <input type="password" name="pass" id="ps" placeholder="Enter your password" class="tag" /></div><br/><br/>
+       
+         <div class="heading">Confirm Password: </div>
+         <div class="input">
+        <input type="password" name="cpass" id="ps" placeholder="Enter your password" class="tag" /></div><br/><br/>
+       
+        <div class="heading">Email: </div>
+        <div class="input">
+        <input type="email" name="email" id="mail" placeholder="Enter your mail-id" class="tag"/></div><br/><br/>
+       
+        <div class="heading">Mobile No: </div>
+        <div class="input">
+        <input type="number" name="no" id="number" placeholder="Enter your mobile no" class="tag" autocomplete="off" /></div><br/><br/>
+            <br/>
+        <div class="input">
+         <button class="btn" id="" value="submit">Submit</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <button class="btn" id="" value="Reset">Reset</button>
+        </div>
+       
+
+
+    </div>
+    </form>
+
+
+    <script>
+
+
+            function validation()
+            {
+                var username = document.myform.name.value;
+                var password = document.myform.pass.value;
+                var cpass = document.myform.cpass.value;
+                var mail = document.myform.email.value;
+                var no= document.myform.no.value;
+
+
+                if(username == "")
+                {
+                    alert("please fill name");
+                    return false;
+                }
+                if(!isNaN(username))                
+                {
+                    alert("please fill only alphabat fields");
+                    return false;
+               
+                }
+                if((username.length <5 ) || (username.length > 15))
+                {
+                     alert("Name length will b between 5 to 15");
+                     return false;
+                }
+                 if(password=="")
+                {
+                    alert("please fill  password ");
+                    return false;
+                }
+               
+                // if((password.length <= 5) && (password.length > 20))
+                // {
+                //     alert("please insert correct password");
+                //     return false;
+                // }
+                if(cpass=="")
+                {
+                    alert("please fill  password again");
+                    return false;
+                }
+             
+                if(cpass!=password)
+                {
+                    alert("please match confirm password");
+                    return false;
+               
+                }
+                if(mail=="")
+                {
+                    alert("please fill your mail id ");
+                    return false;
+                }
+             
+                var atposition=x.indexOf("@");  
+                var dotposition=x.lastIndexOf(".");  
+                if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length)
+                {  
+                     alert("Please enter a valid e-mail address \n atpostion:"+atposition+"\n dotposition:"+dotposition);  
+                     return false;  
+                }  
+                if(no=="")
+                {
+                    alert("please fill your mobile number");
+                    return false;
+                }
+                if(!isNaN(no))              
+                {
+                    alert("please fill only numeric number");
+                    return false;
+               
+                }
+                if(no.length !=10)
+                {
+                    alert("number must be 10 digits");
+                    return false;
+               }
+             }
+    </script>
+</body>
+</html>
