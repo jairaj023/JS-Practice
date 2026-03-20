@@ -1,0 +1,85 @@
+inheritance
+	-> is a concept by which we can access property of one class to another class
+
+	5 types of inheritance
+
+	1. single inheritance
+	2. multi-level inheritance
+	3. multiple inheritance
+	4. heirarchical inheritance
+	5. hybrid inheritance
+--------------------------------------------------------------------------------------
+1. single inheritance
+-------------------------------------------------------------------------------------
+class emp:
+    id=name=sal=None
+
+class manager(emp):
+    perfbonus=totalsal=None
+
+    def input(self):
+        emp.id=input("enter id=")
+        emp.name=input("enter name=")
+        emp.sal=int(input("enter salary="))
+        manager.perfbonus=int(input("enter performacne bonus="))
+
+    def display(self):
+        print("id=",emp.id)
+        print("name=",emp.name)
+        print("salary=",emp.sal)
+        print("performance bonus=",manager.perfbonus)
+        manager.totalsal=emp.sal+manager.perfbonus
+        print("total salary=",manager.totalsal)
+
+m=manager()
+m.input()
+m.display()
+---------------------------------------------------------------------------------------------
+2. heirarchical inheritance
+--------------------------------------------------------------------------------------------
+class emp:
+    id=name=sal=None
+
+class manager(emp):
+    perfbonus=totalsal=None
+
+    def input(self):
+        emp.id=input("enter id=")
+        emp.name=input("enter name=")
+        emp.sal=int(input("enter salary="))
+        manager.perfbonus=int(input("enter performacne bonus="))
+
+    def display(self):
+        print("id=",emp.id)
+        print("name=",emp.name)
+        print("salary=",emp.sal)
+        print("performance bonus=",manager.perfbonus)
+        manager.totalsal=emp.sal+manager.perfbonus
+        print("total salary=",manager.totalsal)
+
+class worker(emp):
+    noh=roi=totalsal=None
+
+    def input(self):
+        emp.id=input("enter id=")
+        emp.name=input("enter name=")
+        emp.sal=int(input("enter salary="))
+        worker.noh=int(input("enter no of hours="))
+        worker.roi=int(input("enter rate of interest="))
+
+    def display(self):
+        print("id=",emp.id)
+        print("name=",emp.name)
+        print("salary=",emp.sal)
+        print("no of hours=",worker.noh)
+        print("rate of interest=",worker.roi)
+        worker.totalsal=emp.sal+worker.noh*worker.roi
+        print("total salary=",worker.totalsal)
+
+m=manager()
+m.input()
+m.display()
+
+w=worker()
+w.input()
+w.display()

@@ -1,0 +1,103 @@
+3. multi-level inheritance
+--------------------------------------------------------------------------------------
+class student:
+    rollno=name=None
+
+class exam(student):
+    sub1=sub2=None
+
+class result(exam):
+    total=None
+
+    def input(self):
+        student.rollno=input("enter rollno=")
+        student.name=input("enter name=")
+        exam.sub1=int(input("enter sub1 marks="))
+        exam.sub2=int(input("enter sub2 marks="))
+
+    def display(self):
+        print("rollno=",student.rollno)
+        print("name=",student.name)
+        print("sub1=",exam.sub1)
+        print("sub2=",exam.sub2)
+        result.total=exam.sub1+exam.sub2
+        print("total=",result.total)
+
+r=result()
+r.input()
+r.display()
+------------------------------------------------
+4. multiple inheritance
+-----------------------------------------------
+class student:
+    rollno=name=None
+
+class exam:
+    sub1=sub2=sub3=sub4=sub5=None
+
+class result(student,exam):
+    total=per=None
+
+    def input(self):
+        student.rollno=input("Enter roll no;")
+        student.name=input("Enter name;")
+        exam.sub1=int(input("Enter sub1 marks;"))
+        exam.sub2=int(input("Enter sub2 marks;"))
+        exam.sub3=int(input("Enter sub3 marks;"))
+        exam.sub4=int(input("Enter sub4 marks;"))
+        exam.sub5=int(input("Enter sub5 marks;"))
+
+    def display(self):
+        print("Roll No. = ",student.rollno)
+        print("Name = ",student.name)
+        print("Physics = ",exam.sub1)
+        print("Chemistry = ",exam.sub2)
+        print("Biology = ",exam.sub3)
+        print("Hindi = ",exam.sub4)
+        print("English = ",exam.sub5)
+        result.total=exam.sub1+exam.sub2+exam.sub3+exam.sub4+exam.sub5
+        print("Total marks = ",result.total)
+        result.per=result.total/5
+        print("Percentage(%) = ",result.per)
+
+r=result()
+r.input()
+r.display()
+
+
+
+
+------------------------------------------------
+5. hybrid inheritance
+-------------------------------------------------
+class student:
+    rollno=name=None
+
+class exam(student):
+    sub1=sub2=None
+
+class sports:
+    sports_marks=None
+
+class result(exam,sports):
+    total=None
+
+    def input(self):
+        student.rollno=input("enter rollno=")
+        student.name=input("enter name=")
+        exam.sub1=int(input("enter sub1 marks="))
+        exam.sub2=int(input("enter sub2 marks="))
+        sports.sports_marks=int(input("enter sports marks="))
+
+    def display(self):
+        print("rollno=",student.rollno)
+        print("name=",student.name)
+        print("sub1=",exam.sub1)
+        print("sub2=",exam.sub2)
+        print("sports marks=",sports.sports_marks)
+        result.total=exam.sub1+exam.sub2+sports.sports_marks
+        print("total=",result.total)
+
+r=result()
+r.input()
+r.display()
