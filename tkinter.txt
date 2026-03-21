@@ -1,0 +1,136 @@
+from tkinter import *
+import tkinter
+
+frame=Tk()
+
+frame.geometry("400x400")
+frame.mainloop()
+-----------------------------------------------------------------------------------
+from tkinter import *
+import tkinter
+
+frame=Tk()
+
+l=Label(text="Enter name:")
+l.place(x=100,y=100)
+
+f=Entry()
+f.place(x=200,y=100)
+frame.geometry("400x400")
+frame.mainloop()
+-----------------------------------------------------------------------------------
+from tkinter import *
+import tkinter
+
+frame=Tk()
+
+l=Label(text="Enter password:")
+l.place(x=100,y=100)
+
+f=Entry(show="*")
+f.place(x=200,y=100)
+frame.geometry("400x400")
+frame.mainloop()
+-------------------------------------------------------------------------------------
+from tkinter import *
+import tkinter
+
+frame=Tk()
+
+b1=Radiobutton(text="male",value="a")
+b1.place(x=100,y=100)
+
+b2=Radiobutton(text="female",value="b")
+b2.place(x=100,y=130)
+
+frame.geometry("400x400")
+frame.mainloop()
+-----------------------------------------------------------------------------------
+from tkinter import *
+import tkinter
+
+frame=Tk()
+
+b1=Checkbutton(text="football")
+b1.place(x=100,y=100)
+
+b2=Checkbutton(text="cricket")
+b2.place(x=100,y=130)
+
+frame.geometry("400x400")
+frame.mainloop()
+------------------------------------------------------------------------------------
+from tkinter import *
+import tkinter
+
+def display():
+    print("hello")
+
+frame=Tk()
+
+b=Button(text="click",command=display)
+b.place(x=100,y=100)
+
+frame.geometry("400x400")
+frame.mainloop()
+---------------------------------------------------------------------------------
+from tkinter import *
+import tkinter
+from tkinter import messagebox
+
+def display():
+    messagebox.showinfo("message","hello")
+
+frame=Tk()
+
+b=Button(text="click",command=display)
+b.place(x=100,y=100)
+
+frame.geometry("400x400")
+frame.mainloop()
+----------------------------------------------------------------------------------
+
+from tkinter import *
+import tkinter
+
+frame=Tk()
+
+l=Label(text="Enter name:")
+l.place(x=100,y=100)
+
+f=Entry()
+f.place(x=200,y=100)
+
+l=Label(text="password:")
+l.place(x=100,y=130)
+
+f=Entry(show="*")
+f.place(x=200,y=130)
+
+l=Label(text="Gender:")
+l.place(x=100,y=170)
+
+b1=Radiobutton(text="male",value="a")
+b1.place(x=200,y=170)
+
+b2=Radiobutton(text="female",value="b")
+b2.place(x=200,y=200)
+
+l=Label(text="Hobbies:")
+l.place(x=100,y=230)
+
+c1=Checkbutton(text="cricket")
+c1.place(x=200,y=230)
+
+c2=Checkbutton(text="football")
+c2.place(x=200,y=260)
+
+def display():
+    print("Succesfully Registered")
+
+b=Button(text="Register",command=display)
+b.place(x=250,y=300)
+
+frame.geometry("400x400")
+frame.mainloop()
+-----------------------------------------------------------------

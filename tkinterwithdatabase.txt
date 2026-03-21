@@ -1,0 +1,88 @@
+from tkinter import *
+import tkinter
+import MySQLdb
+from tkinter import messagebox
+
+def saverecord():
+    name=fname.get()
+    email=femail.get()
+
+    db=MySQLdb.connect("localhost","root","","jai1")
+    cursor=db.cursor()
+
+    sql="insert into emp2(name,email) values(%s,%s)"
+    info=[name,email]
+
+    cursor.execute(sql,info)
+    db.commit()
+    messagebox.showinfo("message","data successfully saved")
+    db.close()
+
+
+frame=Tk()
+
+lname=Label(text="Enter name:")
+lname.place(x=100,y=100)
+fname=Entry()
+fname.place(x=200,y=100)
+
+lemail=Label(text="Enter email:")
+lemail.place(x=100,y=130)
+femail=Entry()
+femail.place(x=200,y=130)
+
+breg=Button(text="register",command=saverecord)
+breg.place(x=200,y=160)
+
+frame.geometry("400x400")
+frame.mainloop()
+
+from tkinter import *
+from tkinter import messagebox
+import MySQLdb
+
+def login():
+    name = fname.get()
+    email = femail.get()
+
+    if not name or not email:
+        messagebox.showinfo("Input Error","Both fields are required.")
+        return
+
+    try:
+        db=MySQLdb.connect("localhost","root","","jai")
+        cursor=db.cursor()
+
+        sql="select name, email from emp where name=%s and email=%s"
+        info=[name, email]
+
+        cursor.execute(sql, info)
+        data=cursor.fetchone()
+
+        if data:
+            messagebox.showinfo("Login Success",f"Welcome {name}")
+        else:
+            messagebox.showinfo("Login Failed","Invalid name or email.")
+
+    except:
+        messagebox.showinfo("Database Error")
+        db.close()
+
+frame=Tk()
+frame.geometry("400x400")
+frame.title("Login Form")
+
+lname=Label(frame, text="Enter name:")
+lname.place(x=100, y=100)
+fname=Entry(frame)
+fname.place(x=200, y=100)
+
+lemail=Label(frame, text="Enter email:")
+lemail.place(x=100, y=130)
+femail=Entry(frame)
+femail.place(x=200, y=130)
+
+blog=Button(frame, text="Login", command=login)
+blog.place(x=200, y=160)
+
+frame.mainloop()
