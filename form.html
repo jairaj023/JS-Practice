@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="ms">
+        <p>Form Validation</p>
+
+    </div>
+
+    <form name="myform" method="post" onsubmit="return validation()" style="text-align: center;">
+        <div class="main">
+        
+            <div class="heading"> Username:</div>
+            <div class="input">
+            <input type="text" name="name" id="nm" placeholder="Enter Your Name!" class="tag"></div><br><br>
+            <div class="heading"> E-Mail:</div>
+            <div class="input">
+            <input type="email" name="e-mail" id="email" placeholder="Enter Your E-Mail!" class="tag"></div><br><br>
+            <div class="heading"> Mobile No.:</div>
+            <div class="input">
+            <input type="number" name="no" id="number" maxlength="10" pattern="/d" placeholder="Enter Your Number!" class="tag" autocomplete="off"></div><br><br>
+            <div class="heading"> Password:</div>
+            <div class="input">
+            <input type="password" name="pass" id="ps" placeholder="Enter Your Password" class="tag"></div><br><br>
+            <div class="heading"> Confirm Password:</div>
+            <div class="input">
+            <input type="password" name="cpass" id="ps" placeholder="Confirm Your Password!" class="tag"></div><br><br>
+         <button class="btn" id="" value="submit">Submit</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <button class="btn" id="" value="Reset">Reset</button>
+       
+        </div>
+    </form>
+
+    <script src="./script.js"></script>
+</body>
+</html>
